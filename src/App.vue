@@ -1,30 +1,44 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <div class="wrapper">
+    <Header />
+    <div class="wrapper__content">
+      <router-view />
+      <Footer />
+    </div>
+  </div>
 </template>
+<script>
+import Header from "./components/HeaderBlock.vue";
+import Footer from "./components/FooterBlock.vue";
 
+export default {
+  components: {
+    Header,
+    Footer,
+  },
+};
+</script>
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+body {
+  margin: 0;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 }
 </style>

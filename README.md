@@ -1,4 +1,4 @@
-# helga
+# helgi
 
 ## Project setup
 ```
